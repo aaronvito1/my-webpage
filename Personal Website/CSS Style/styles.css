@@ -1,0 +1,129 @@
+/* Universal NAVBAR CSS */
+.navbar {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+
+}
+
+/* Homepage */
+.homepage {
+  text-align: center;
+}
+
+.homepage h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200px;
+  padding-top: 150px;
+}
+
+.homepage p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+}
+
+.homepage .home-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+
+}
+
+/* About Me Page */
+.about-me-header h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+
+.aboutmepic {
+    padding-left: 200px; 
+    height: auto; 
+    width: auto; 
+    max-width: 600px; 
+    max-height: 500px;
+}
+
+.container .AboutInfo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+}
+
+/* Portfolio Page */
+.portfolio-header h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+  padding-top: 100px;
+}
+
+.portfolio-header h3 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 40px;
+}
+
+.card {
+  width: 40rem;
+  display: flex;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body h5  {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-body p {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* BlogPage */
+.blog-header h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 5px;
+}
+
+.blog-header h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.blog-container h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+.blog-container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.blog-container .row {
+  padding-top: 30px;
+}
+
+/* Contact Section */
+.contact-header h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 5px;
+}
+
+.container .row .email-contact {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
