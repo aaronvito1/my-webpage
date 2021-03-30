@@ -6,14 +6,14 @@ bottom_html_file = open('./templates/bottom.html').read()
 
 # Use contents dir to add the middle parts to complete the code
 # Currently Home 
-middle_html_file = open('./content/Home.html').read()
+middle_html_file = open('./content/index.html').read()
 
 print('HTML files combined')
 
 combined_html_files = top_html_file + middle_html_file + bottom_html_file
 print(combined_html_files)
 
-open('Home.html', 'w+').write(combined_html_files)
+open('index.html', 'w+').write(combined_html_files)
 
 
 # About 
