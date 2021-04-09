@@ -65,7 +65,7 @@ def apply_template(content):
 		open(page['output'], 'w+').write(finished_page)
 		results = page['output']
 		# print(results)
-		return results
+		# return results
 
 print('------------------------------')
 
