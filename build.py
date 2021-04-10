@@ -45,37 +45,53 @@ pages = [
 
 
 # this will read the contents of every page listed
-def read_in_file(filename):
-	for page in pages: 
-		filename_content = open(filename).read()
-		print(filename_content) 
-		return filename_content
+# def read_in_file(filename):
+# 		filename_content = open(filename).read()
+# 		print(filename_content) 
+# 		return filename_content
 
-# page_content = read_in_file(filename)
+# # page_content = read_in_file(filename)
 
-print('------------------------------')
+# print('------------------------------')
 
-# applies the base template to each of the page content 
-def apply_template(content):
-	for page in pages:
-		# read in combined top/bottom template 
-		template = open('./templates/base.html').read()
-	    # this assigns a finsihed page and replaces content with page_content
-		finished_page = template.replace('{{content}}', read_in_file(page['filename']))
-		open(page['output'], 'w+').write(finished_page)
-		results = page['output']
-		# print(results)
-		# return results
+# # applies the base template to each of the page content 
+# def apply_template(content):
+# 		# read in combined top/bottom template 
+# 		template = open('./templates/base.html').read()
+# 	    # this assigns a finsihed page and replaces content with page_content
+# 		finished_page = template.replace('{{content}}', read_in_file(page['filename']))
+# 		open(page['output'], 'w+').write(finished_page)
+# 		results = page['output']
+# 		# print(results)
+# 		# return results
 
 print('------------------------------')
 
 def main():
 	for page in pages:
+		def read_in_file(filename):
+			filename_content = open(filename).read()
+			print(filename_content) 
+			return filename_content
+			
+		def apply_template(content):
+					# read in combined top/bottom template 
+					template = open('./templates/base.html').read()
+				    # this assigns a finsihed page and replaces content with page_content
+					finished_page = template.replace('{{content}}', read_in_file(page['filename']))
+					open(page['output'], 'w+').write(finished_page)
+					results = page['output']
+
 		print(page['filename'])
 		print('------------------------------')
 		content = read_in_file(page['filename'])
 		resulting_html_for_doc = apply_template(content)
 		# print(resulting_html_for_doc
+
+
+
+		# applies the base template to each of the page content 
+	
 
 	# original SSG code from previous assignment (part 2.1)
 	# Top template of the webpage
@@ -157,5 +173,3 @@ def main():
 	# finished_contact_page = template.replace("{{content}}", contact_content)
 	# open("docs/contact.html", "w+").write(finished_contact_page)
 main()
-
-
