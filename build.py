@@ -29,6 +29,28 @@ pages = [
 	},
 ]
 
+print('------------------------------')
+
+def main():
+	for page in pages:
+		def read_in_file(filename):
+			filename_content = open(filename).read()
+			print(filename_content) 
+			return filename_content
+
+		def apply_template(content):
+					# read in combined top/bottom template 
+					template = open('./templates/base.html').read()
+				    # this assigns a finsihed page and replaces content with page_content
+					finished_page = template.replace('{{content}}', read_in_file(page['filename']))
+					open(page['output'], 'w+').write(finished_page)
+					results = page['output']
+
+		print(page['title'])
+		print('------------------------------')
+		content = read_in_file(page['filename'])
+		resulting_html_for_doc = apply_template(content)
+
 # for page in pages:
 # 	page_title = page['title']
 # 	# used print statements to assure for loop works
@@ -65,27 +87,7 @@ pages = [
 # 		# print(results)
 # 		# return results
 
-print('------------------------------')
 
-def main():
-	for page in pages:
-		def read_in_file(filename):
-			filename_content = open(filename).read()
-			print(filename_content) 
-			return filename_content
-			
-		def apply_template(content):
-					# read in combined top/bottom template 
-					template = open('./templates/base.html').read()
-				    # this assigns a finsihed page and replaces content with page_content
-					finished_page = template.replace('{{content}}', read_in_file(page['filename']))
-					open(page['output'], 'w+').write(finished_page)
-					results = page['output']
-
-		print(page['filename'])
-		print('------------------------------')
-		content = read_in_file(page['filename'])
-		resulting_html_for_doc = apply_template(content)
 		# print(resulting_html_for_doc
 
 
