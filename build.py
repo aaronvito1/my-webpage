@@ -1,41 +1,41 @@
 print('Python SSG (Static Site Generator code for HW 3)')
-# listing out file names in dicts
+from jinja2 import Template
+import glob
+import os
 
-pages = [
-	{
-		'filename': './content/index.html',
-		'output': 'docs/index.html',
-		'title': 'Home',
-	},
-	{
-		'filename': './content/about.html',
-		'output': 'docs/about.html',
-		'title': 'About Me',
-	},
-	{
-		'filename': './content/portfolio.html',
-		'output': 'docs/portfolio.html',
-		'title': 'Portfolio',
-	},
-	{
-		'filename': './content/blog.html',
-		'output': 'docs/blog.html',
-		'title': 'Blog',
-	},
-	{
-		'filename': './content/contact.html',
-		'output': 'docs/contact.html',
-		'title': 'Contact',
-	},
-]
+# creates a list of files that only contains html extensions 
+# the data type that glob produces when imported is a list of filenames from 
+# content directory
+all_content_html_files = glob.glob("content/*.html")
+print(all_content_html_files)
+# all_docs_html_files = glob.glob("docs/*.html")
 
-print('------------------------------')
+# create a pages list to eventually append the all html files content into
+
+pages = []
 
 def main():
+# using a for loop to access the list of files created by import glob
+	for file in all_content_html_files:
+		# produces the file path of individual files
+		file_path = file
+		# print(file_path)
+		# produces the name of the path with the extension
+		file_name = os.path.basename(file_path)
+		# print(file_name)
+		# produces name only, no extension
+		name_only, extension = os.path.splitext(file_name)
+		pages.append({
+			"filename": file_path,
+			"title": name_only,
+			"output": ("docs/"+name_only+extension),
+		})
+	# list of dictonaries for all files, to replace a hard coded list (4-30)from previous hw
+	# print(pages)
 	for page in pages:
 		def read_in_file(filename):
 			filename_content = open(filename).read()
-			print(filename_content) 
+			# print(filename_content) 
 			return filename_content
 
 		def apply_template(content):
@@ -46,10 +46,11 @@ def main():
 					open(page['output'], 'w+').write(finished_page)
 					results = page['output']
 
-		print(page['title'])
 		print('------------------------------')
+		print(page['title'])
 		content = read_in_file(page['filename'])
 		resulting_html_for_doc = apply_template(content)
+		print("File was created in docs directory")
 
 # for page in pages:
 # 	page_title = page['title']
@@ -174,4 +175,33 @@ def main():
 	# Use the string replace
 	# finished_contact_page = template.replace("{{content}}", contact_content)
 	# open("docs/contact.html", "w+").write(finished_contact_page)
+	# listing out file names in dicts
+
+	# pages = [
+	# 	{
+	# 		'filename': './content/index.html',
+	# 		'output': 'docs/index.html',
+	# 		'title': 'Home',
+	# 	},
+	# 	{
+	# 		'filename': './content/about.html',
+	# 		'output': 'docs/about.html',
+	# 		'title': 'About Me',
+	# 	},
+	# 	{
+	# 		'filename': './content/portfolio.html',
+	# 		'output': 'docs/portfolio.html',
+	# 		'title': 'Portfolio',
+	# 	},
+	# 	{
+	# 		'filename': './content/blog.html',
+	# 		'output': 'docs/blog.html',
+	# 		'title': 'Blog',
+	# 	},
+	# 	{
+	# 		'filename': './content/contact.html',
+	# 		'output': 'docs/contact.html',
+	# 		'title': 'Contact',
+	# 	},
+	# ]
 main()
