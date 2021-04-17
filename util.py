@@ -4,7 +4,7 @@ import os
 
 # list of files that only contains html extensions 
 all_content_html_files = glob.glob("./content/*.html")
-print(all_content_html_files)
+# print(all_content_html_files)
 pages = [] 
 
 def generate_list(list):
