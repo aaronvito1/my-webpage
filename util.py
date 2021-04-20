@@ -3,25 +3,27 @@ import glob
 import os
 
 # list of files that only contains html extensions 
-all_content_html_files = glob.glob("./content/*.html")
+all_content_html_files = sorted(glob.glob("./content/*.html"))
+
 # print(all_content_html_files)
 pages = [] 
 
 def generate_list(list):
-	for file in list:
-		file_path = file
-		# print(file_path)÷
-		file_name = os.path.basename(file_path)
-		# print(file_name)
-		name_only, extension = os.path.splitext(file_name)
-		# print(name_only)
+	for file in list :
+		if file != "./content/index.html" :
+			file_path = file
+			# print(file_path)÷
+			file_name = os.path.basename(file_path)
+			# print(file_name)
+			name_only, extension = os.path.splitext(file_name)
+			# print(name_only)
 
-		new_list = pages.append({
-			"filename": file_path,
-			"title": name_only,
-			"output": 'docs/'+file_name,
-			"output_filename": './'+file_name,
-		})
+			new_list = pages.append({
+				"filename": file_path,
+				"title": name_only,
+				"output": 'docs/'+file_name,
+				"output_filename": './'+file_name,
+			})
 	return new_list
 
 generate_list(all_content_html_files)
