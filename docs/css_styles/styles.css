@@ -17,13 +17,13 @@
 
 .homepage h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 200px;
+  font-size: 15vw;
   padding-top: 150px;
 }
 
 .homepage p {
   font-family: 'Roboto', sans-serif;
-  font-size: 30px;
+  font-size: 3vw;
 }
 
 .homepage .home-button {
@@ -35,7 +35,7 @@
 /* About Me Page */
 .about-me-header h2{
   font-family: 'Montserrat', sans-serif;
-  font-size: 100px;
+  font-size: 6vw;
   text-align: center;
   padding-top: 100px;
   padding-bottom: 50px;
@@ -48,7 +48,7 @@
 
 .container .AboutInfo {
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 2vw;
 }
 
 /* Portfolio Page */
