@@ -32,10 +32,17 @@
         <a class="navbar-brand" href="./index.html">Aaron Vito</a>
 
             {% for page in pages %}
-                {% if (page.output_filename != "./index.html") %}
-                    <a class="nav-item nav-link" href="{{ page.output_filename }}">
-                        {{ page.title | title }}
-                    </a>
+                {% if page.output_filename != "./index.html" and page.output_filename != "./portfolio.html" and page.output_filename != "./extra.html" %}
+                    <a class="nav-item nav-link" href="{{ page.output_filename }}">{{ page.title | title }}</a>
+                {% endif %}
+                {% if page.output_filename == "./portfolio.html" %} 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="./portfolio.html">Portfolio</a>
+                          <a class="dropdown-item" href="./extra.html">Dance Reel</a>
+                        </div>
+                    </li>
                 {% endif %}
             {% endfor %}
 
