@@ -31,11 +31,12 @@
       <div class="collapse navbar-collapse navbar-nav" id="navbarTogglerDemo01">
         <a class="navbar-brand" href="./index.html">Aaron Vito</a>
 
-
             {% for page in pages %}
-                <a class="nav-item nav-link" href="{{ page.output_filename }}">
-                    {{ page.title | title }}
-                </a>
+                {% if (page.output_filename != "./index.html") %}
+                    <a class="nav-item nav-link" href="{{ page.output_filename }}">
+                        {{ page.title | title }}
+                    </a>
+                {% endif %}
             {% endfor %}
 
       </div>
